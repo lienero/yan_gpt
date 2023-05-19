@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f6f6f6;
+  height: 100vh;
+  font-size: 17px;
+}
+
+.chat {
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #d3d3d3;
+
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+}
+
+.chat-header-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.chat-history {
+  padding: 10px;
+  height: 90vh;
+  overflow-y: scroll;
+  background-color: #f9d9e3;
+}
+
+.message {
+  display: flex;
+  margin: 10px 0;
+  background-color: transparent;
+}
+
+.message-body {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 10px;
+}
+
+.message-to {
+  justify-content: flex-end;
+
+  .message-body {
+    align-items: flex-end;
+    margin-left: 0;
+    margin-right: 10px;
+  }
+}
+
+.message-content {
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #d3d3d3;
+
+  .message-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+.message .profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.message-timestamp {
+  font-size: 12px;
+  color: #9b9b9b;
+  margin-top: 5px;
+}
+
+.chat-footer {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #d3d3d3;
+
+  textarea {
+    width: 100%;
+    height: 5vh;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #d3d3d3;
+    resize: none;
+  }
+
+  button {
+    width: 15%;
+    height: 5vh;
+    margin-left: 10px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #00bfff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #009acd;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 확대되는 이미지를 감싸는 상자 */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+
+  img {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+  }
+}
+
+/* 확대되는 이미지 */
+
+@media (min-width: 1000px) {
+  .chat {
+    max-width: 700px;
+  }
+
+  .chat-history {
+    height: 80vh;
+  }
+}
