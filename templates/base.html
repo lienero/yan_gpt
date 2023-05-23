@@ -1,0 +1,35 @@
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+      {% block title %}YanGpt Chat{% endblock %}
+    </title>
+    {% load static %}
+    {% load sass_tags %}
+    <link rel="stylesheet" type="text/css" href="{% sass_src 'css/common.scss' %}"/>
+    <script src="{% static 'js/application.js' %}"></script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="/">
+            <img src="https://cdn-icons-png.flaticon.com/512/10292/10292297.png" alt="로고">
+          </a>
+        </div>
+        <ul class="menu">
+          <li>
+            <a href="#">로그아웃</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="chat">
+      {% block content %}{% endblock %}
+    </div>
+    {% block extra-script %}{% endblock %}
+  </body>
+
+</html>

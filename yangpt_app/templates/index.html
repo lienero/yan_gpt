@@ -1,52 +1,39 @@
-<html>
-
-  <head>
-    <title>YanGpt Chat</title>
-    {% load static %}
-    {% load sass_tags %}
-    <link rel="stylesheet" type="text/css" href="{% sass_src 'css/common.scss' %}"/>
-    <script src="{% static 'js/application.js' %}"></script>
-  </head>
-
-  <body>
-    <div class="chat">
-      <div class="chat-header">
-        <img src="https://placeimg.com/50/50/tech" alt="profile-pic"/>
-        <span class="chat-header-name">John Doe</span>
-      </div>
-      <div class="chat-history">
-        <div class="message message-from">
-          <img class="profile-img" src="https://via.placeholder.com/50x50" alt="Profile Picture"/>
-          <div class="message-body">
-            <div class="message-content">
-              <p>안녕하세요!</p>
-            </div>
-            <div class="message-timestamp">12:34 PM</div>
-          </div>
+{% extends 'base.html' %}
+{% block content %}
+  <div class="chat-header">
+    <img src="https://placeimg.com/50/50/tech" alt="profile-pic"/>
+    <span class="chat-header-name">John Doe</span>
+  </div>
+  <div class="chat-history">
+    <div class="message message-from">
+      <img class="profile-img" src="https://via.placeholder.com/50x50" alt="Profile Picture"/>
+      <div class="message-body">
+        <div class="message-content">
+          <p>안녕하세요!</p>
         </div>
-        <div class="message message-to">
-          <div class="message-body">
-            <div class="message-content">
-              <p>안녕하세요! 반갑습니다. 안녕하세요! 반갑습니다. 안녕하세요! 반갑습니다. 안녕하세요! 반갑습니다.</p>
-            </div>
-            <div class="message-timestamp">12:35 PM</div>
-          </div>
-        </div>
-        <div class="message message-from">
-          <img class="profile-img" src="https://via.placeholder.com/50x50" alt="Profile Picture"/>
-          <div class="message-body">
-            <div class="message-content">
-              <img class="message-img" src="https://blog.kakaocdn.net/dn/0mySg/btqCUccOGVk/nQ68nZiNKoIEGNJkooELF1/img.jpg" alt="상대방이 보낸 이미지"/>
-            </div>
-            <div class="message-timestamp">12:34 PM</div>
-          </div>
-        </div>
-      </div>
-      <div class="chat-footer">
-        <textarea placeholder="Type your message"></textarea>
-        <button>전송</button>
+        <div class="message-timestamp">12:34 PM</div>
       </div>
     </div>
-  </body>
-
-</html>
+    <div class="message message-to">
+      <div class="message-body">
+        <div class="message-content">
+          <p>안녕하세요! 반갑습니다. 안녕하세요! 반갑습니다. 안녕하세요! 반갑습니다. 안녕하세요! 반갑습니다.</p>
+        </div>
+        <div class="message-timestamp">12:35 PM</div>
+      </div>
+    </div>
+    <div class="message message-from">
+      <img class="profile-img" src="https://via.placeholder.com/50x50" alt="Profile Picture"/>
+      <div class="message-body">
+        <div class="message-content">
+          <img class="message-img" src="https://blog.kakaocdn.net/dn/0mySg/btqCUccOGVk/nQ68nZiNKoIEGNJkooELF1/img.jpg" alt="상대방이 보낸 이미지"/>
+        </div>
+        <div class="message-timestamp">12:34 PM</div>
+      </div>
+    </div>
+  </div>
+  <div class="chat-footer">
+    <textarea placeholder="Type your message"></textarea>
+    <button>전송</button>
+  </div>
+{% endblock %}

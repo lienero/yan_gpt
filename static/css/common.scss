@@ -11,6 +11,43 @@ body {
   font-size: 17px;
 }
 
+// 상단 네비
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  max-width: 10%;
+  height: auto;
+}
+
+.menu {
+  li {
+    display: inline-block;
+    margin-right: 10px;
+    white-space: nowrap;
+
+    // 추후에 네비게이션 메뉴 추가 가능성 있음
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+// 채팅창
 .chat {
   width: 100%;
   margin: 0 auto;
