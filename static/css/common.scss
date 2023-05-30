@@ -168,15 +168,6 @@ nav {
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 /* 확대되는 이미지를 감싸는 상자 */
 
 .modal {
@@ -199,14 +190,54 @@ nav {
   }
 }
 
-/* 확대되는 이미지 */
-
 @media (min-width: 1000px) {
   .chat {
     max-width: 700px;
   }
 
   .chat-history {
-    height: 80vh;
+    height: 77vh;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  input[type='text'] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #555;
+  }
+
+  @media (min-width: 800px) {
+    input,
+    button {
+      font-size: 1.5em;
+    }
   }
 }

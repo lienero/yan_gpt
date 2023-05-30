@@ -1,0 +1,21 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>
+    {% block title %}YanGpt Chat{% endblock %}
+  </title>
+  {% load static %}
+  {% load sass_tags %}
+  <link rel="stylesheet" type="text/css" href="{% sass_src 'css/common.scss' %}"/>
+  <script src="{% static 'js/application.js' %}"></script>
+</head>
+
+<body>
+  <div class="container">
+    <form method="post" action='{% url "login" %}' class="login_form">{% csrf_token %}
+      <div class="form-group">
+        <input type="text" id="username" name="username" required="required" placeholder="닉네임을 입력해주세요">
+      </div>
+      <button type="submit">로그인</button>
+    </form>
+  </div>
+</body>
