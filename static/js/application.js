@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.appendChild(modal);
 
   const images = document.querySelectorAll('.message-img'); // 모든 이미지 요소 선택
-  console.log(images);
 
   images.forEach((img) => {
     console.log(img);
@@ -18,5 +17,22 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'none'; // 상자 숨기기
       });
     });
+  });
+
+  const form = document.querySelector('.login_form');
+  const usernameInput = document.querySelector('#username');
+  const notification = document.querySelector('.notification');
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const username = usernameInput.value;
+    if (username !== '') {
+      console.log(notification);
+      modal.append(notification);
+      modal.style.display = 'flex';
+      notification.innerText = `아이디: ${username}`;
+      notification.classList.add('show');
+    }
   });
 });
